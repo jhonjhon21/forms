@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Design</title>
     <link rel="stylesheet" href="projectform.css">
-
 </head>
 <body>
     <header>
-        <P>Create Your Account</P>
+        <p>Create Your Account</p>
     </header>
 
     <main>
@@ -17,74 +16,65 @@
             <fieldset> 
                 <legend>Register Here</legend>
                 <hr>
-            <p class="message">Signup now and get full acess to my app.</p>
+                <p class="message">Signup now and get full access to my app.</p>
+
+                <div class="form-row">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" placeholder="Type Here" required>
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" placeholder="Type Here" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Type Here" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Type Here" required>
+                </div>
+
+                <div class="radio-row">
+                    <div>Year in School:</div>
+                    <label><input type="radio" name="year" value="Freshman">Freshman</label>
+                    <label><input type="radio" name="year" value="Sophomore">Sophomore</label>
+                    <label><input type="radio" name="year" value="Junior">Junior</label>
+                    <label><input type="radio" name="year" value="Senior">Senior</label>
+                </div>
+
+                <div class="select-row">
+                    <label for="state">State</label>
+                    <select name="state" id="state" required>
+                        <option value=\"\">Select a state</option>
+                        <option value="CO">Colorado</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="UT">Utah</option>
+                        <option value="FL">Florida</option>
+                    </select>
+                </div>
+
+                <div class="radio-row">
+                    <label><input type="checkbox" name="agree" id="agree">Remember me</label>
+                </div>
+
+                <div class="form-row">
+                    <label for="comments">Any Questions?</label>
+                    <textarea name="comments" id="comments" placeholder="Write here..."></textarea>
+                </div>
+
+                <button= class="form-row form-spacer"> 
+                    <input type="submit" value="Submit">
+                </div>
+            </fieldset>
+            <p class="signin">
+                Already have an account?
+                <a href="projectform.html".html">Sign In</a>
+            </p>
         </form>
-
-
-        <div class="form-row">
-            <input type="text" placeholder="Type Here" required>
-            <label for="fname">First Name</label>
-
-            <input type="text" placeholder="Type Here" required>
-            <label for="lfname">Last Name</label>
-
-        </div>
-        
-
-        <div class="form-row">
-            <input type="type" placeholder="Type Here" required>
-            <label for="email">Email</label> 
-
-            <input type="text" placeholder="Type Here" required>
-            <label for="Password">Password</label>
-        
-    
-
-        <div class="radio-row">
-            <div> Year in School </div>
-            <label><input type="radio" name="year1"  value="Freshman">Freshman</label>
-            <label><input type="radio" name="year2"  value="Sophomore">Sophomore</label>
-            <label><input type="radio" name="year3"  value="Junior">Junior</label>
-            <label><input type="radio" name="year4"  value="Senior">Senior</label>
-        </div>
-        
-
-        <div class="form-row">
-            <label for="select">State</label>
-            <select name="state" id="state" >
-                <option value="blank"></option>
-                <option value="Co">Colorado</option>
-                <option value="HI">Hawaii</option>
-                <option value="UT">Utah</option>
-                <option value="FL">Florida</option>
-            </select>
-        </div>
-  
-
-        <div class="radio-row">
-            <label><input type="checkbox" name="agree" id="agree" checked>Remember me</label>
-        </div>
-
-
-        <div class="form-row">
-            <textarea name="comments" id="comments" placeholder="Any Question?"></textarea>
-            <label for="text"></label>
-        </div>
-
-
-        <div class="form-row"> 
-            <div class="form-spacer">
-            <input type="submit">
-        </div>
-    
-        </fieldset>
-
-    </form>
-
     </main>
 
     <footer>
-        <p>&copy: Jhonattan Rabello</p>
+        <p>&copy; Jhonattan Rabello</p>x
     </footer>
 </body>
 </html>
