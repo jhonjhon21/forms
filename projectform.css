@@ -1,57 +1,106 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    margin: 0;
 }
 
-header {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color:rgb(240, 165, 209);
-    padding: 3px;
-    margin: 10px;
+main {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+}
+
+header p {
     text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 fieldset {
-    display: block;
-    margin-left: 5px;
-    padding-top: 1px;
-    background-color: rgb(255, 207, 215);
-    
+    border: none;
+    padding: 0;
 }
 
 legend {
-    background-color:rgb(240, 165, 209);
-}
-
-.form-row input:not([type="submit"]) {
-    padding: 5px;
-    border-radius: 5px;
-    background-color: aliceblue;
-}
-
-.form-row input[type="submit"] {
-    padding: 30px;
-    background-color:rgb(240, 165, 209);
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
-    border-radius: 10px;
+    color: #6a67ce;
+    margin-bottom: 10px;
 }
 
+.message {
+    color: #555;
+    margin-bottom: 20px;
+}
 
-.radio-row {
+.form-row {
     display: flex;
-    gap: 40px;
-    margin: 5px;
+    gap: 10px;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
-.form-spacer {
-    width: 150px;
-    text-align: ce;
+.form-row label {
+    margin-bottom: 5px;
+    color: #444;
 }
 
+.form-row input:not([type="submit"]),
+textarea,
+select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-row input:not([type="submit"]):focus,
+textarea:focus,
+select:focus {
+    border-color: #6a67ce;
+    background-color: #fff;
+}
+
+.radio-row,
+.select-row {
+  margin-bottom: 15px;
+}
+
+.radio-row label {
+  margin-right: 10px;
+}
+
+.form-spacer input[type="submit"] {
+  padding: 12px 25px;
+  background-color: #6a67ce;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-spacer input[type="submit"]:hover {
+  background-color: #5552b9;
+  transform: translateY(-2px);
+}
+
+.signin {
+  text-align: center;
+  margin-top: 20px;
+}
 
 footer {
-    font-family:Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+  font-size: 14px;
 }
