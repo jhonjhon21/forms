@@ -104,3 +104,36 @@ footer {
   color: #777;
   font-size: 14px;
 }
+
+@media only screen and (max-width: 600px) {
+
+
+    .form-row {
+        background-color: #e2c4c4;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-row label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .form-row input:not([type="submit"]),
+    textarea,
+    select {
+        width: 100%;
+    }
+
+    .radio-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-spacer input[type="submit"] {
+        width: 100%;
+        padding: 20px;
+        font-size: 22px;
+        margin-top: 15px;
+    }
+}
