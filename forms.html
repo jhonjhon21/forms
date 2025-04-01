@@ -13,74 +13,127 @@
     </header>
 
     <main>
-        <form action="processing.html" method="post">
-            <fieldset>
-                <legend>Account Info</legend>
-                    <div class="form-row"> 
-                        <label for="Full name">Full  Name</label>
-                        <input type="fullname" placeholder="Full Name">
+        <form action="processing.html" method="get" id="myForm">
+                <fieldset>
+                    <legend>Account Info</legend>
+            
+                    <div class="form-row">
+                        Full Name <input type="text" id="firstName" name="first" placeholder="Full Name" required>
                     </div>
-
-                    <div class="form-row"> 
-                        <label for="email">Email</label>
-                        <input type="email" name="email" value="ok@byuh.edu" id="">
-                    </div>
+            
+                    <div id="message"></div>
 
                     <div class="form-row">
-                        <label for="password">Password</label>
-                       <input type="password" name=" password" id="pass" placeholder="Password"> 
+                        Email <input type="email" name="email" id="Email" placeholder="Email" required>
                     </div>
-
+            
                     <div class="form-row">
-
+                        Password<input type="password" name="password" id="pass" placeholder="Password" required>
+                    </div>
+            
+                    <div class="form-row">
                         <label for="state">State</label>
-                        <select name="state" id="state">
-                            <option value="blank"></option>
+                        <select name="state" id="state" required>
+                            <option value="blank">Select a State</option>
                             <option value="Co">Colorado</option>
                             <option value="HI">Hawaii</option>
                             <option value="UT">Utah</option>
                             <option value="FL">Florida</option>
                         </select>
                     </div>
-
-
+            
                     <div class="radio-row">
-                        <div> Year in School </div>
-                        <label><input type="radio" name="year"  value="Freshman">Freshman</label>
-                        <label><input type="radio" name="year"  value="sophomore">Sophomore</label>
+                        <div>Year in School</div>
+                        <label><input type="radio" name="year" value="Freshman">Freshman</label>
+                        <label><input type="radio" name="year" value="Sophomore">Sophomore</label>
                     </div>
-                   
-
+            
                     <div class="radio-row">
                         <div class="form-spacer"></div>
-                        <label><input type="checkbox" name="agree" id="agree" checked>Remember me</label>
+                        <label><input type="checkbox" name="agree" id="agree">Remember me</label>
                     </div>
- 
-
+            
                     <div class="form-row">
                         <label for="comments">Comments</label>
                         <textarea name="comments" id="comments"></textarea>
                     </div>
-
-                    
-                    <div class="form-row"> 
+            
+                    <div class="form-row">
                         <div class="form-spacer"></div>
-                        <input type="submit">
+                        <input type="submit" value="Submit">
                     </div>
-                    
-            </fieldset>
-        </form>
-
-        <ol>
-            <li>What are different ways to style your form?</li>
-            <p>Use padding, margins, borders, shadows, font styles, and hover/focus effects for a clean, interactive layout.</p>
-            <li>Why does the professor like to use flex?</li>
-            <p>Flexbox makes layout alignment simple, responsive, and efficient with minimal code.</p>
-        </ol>
+                </fieldset>
+            </form>
+            
+    
     </main>
 
     <footer>
         <p>&copy2025 Jhonattan Rabello </p>
     </footer>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const first = document.getElementById("firstName").value.trim();
+    const email = document.getElementById("Email").value.trim();
+    const password = document.getElementById("pass").value.trim();
+    const state = document.getElementById("state").value;
+    const comments = document.getElementById("comments").value.trim();
+    
+
+    if (!first) {
+        alert("Please provide your Full Name.");
+        return;
+    }
+
+    if (!email) {
+        alert("Please provide your Email.");
+        return;
+    }
+
+    if (!password) {
+        alert("Please provide your Password.");
+        return;
+    }
+
+    if (state === "blank") {
+        alert("Please select a state.");
+        return;
+    }
+
+        const data = {
+        fullName: first,
+        email: email,
+        password: password,
+        state: state,
+        comments: comments
+    };
+
+    console.log(data);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "./data/Submit.json", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            alert(response.message);
+
+            const messageContainer = document.getElementById("message");
+            messageContainer.innerHTML = `<p>${response.message}</p>`;
+            
+            document.getElementById("myForm").reset();
+
+        }
+    };
+
+    xhr.send(); 
+
+});
+
+    </script>
 </body>
 </html>
