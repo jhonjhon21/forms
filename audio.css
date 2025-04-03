@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1 {
+    background-color: rgb(177, 145, 207);
+}
+
+.btn{
+    display: block;
+    padding: 10px;
+    color: aquamarine;
+    background-color: blue;
+    width: 110px;
+    text-align: center;
+    text-decoration: none;
+    transition-property: background-color;
+    transition-duration: 1.0s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.1s;
+}
+
+.btn:hover {
+    background-color:rgb(206, 33, 241);
+}
+
+iframe {
+    border: 0;
+}
+
+#mordecai {
+    width: 200px;
+    margin: 0px;
+    border: thin solid black;
+}
+
+#mordecai img {
+    width:100%;
+}
+
+ol {
+    font-size: 20px;
+}
+
